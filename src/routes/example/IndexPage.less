@@ -1,0 +1,29 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: salmon;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  img {
+    height: 50vw;
+    width: 50vw;
+  }
+  .tagContainer {
+    margin-top: 10vw;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    &>div {
+      margin-left: 2vw;
+      margin-bottom: 2vw;
+      background: sandybrown;
+    }
+  }
+  &>p {
+    line-height: 40px;
+  }
+}
