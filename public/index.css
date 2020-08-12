@@ -1,0 +1,12 @@
+html {
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  min-width: 320px;
+  max-width: 640px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}

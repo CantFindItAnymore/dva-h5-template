@@ -1,3 +1,9 @@
+/*
+ * @Author: ranjun 
+ * @Date: 2020-08-11 17:57:26 
+ * @Last Modified by:   ranjun 
+ * @Last Modified time: 2020-08-11 17:57:26 
+ */
 import fetch from 'dva/fetch';
 
 function parseJSON(response) {
@@ -7,6 +13,8 @@ function parseJSON(response) {
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
     return response;
+  } else {
+    // 拦截处理
   }
 
   const error = new Error(response.statusText);
