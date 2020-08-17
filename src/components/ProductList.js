@@ -8,6 +8,7 @@ const ProductList = ({ onDelete, products }) => {
 
   dataSource.map(item => {
     item.key = item.id
+    return true
   })
 
   const columns = [{

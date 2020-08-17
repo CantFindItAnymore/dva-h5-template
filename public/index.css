@@ -1,11 +1,13 @@
-html {
+body {
   display: flex;
   justify-content: center;
+  background: skyblue;
 }
 
 #root {
   min-width: 320px;
   max-width: 640px;
+  background: skyblue;
   overflow: hidden;
   display: flex;
   justify-content: center;
