@@ -1,10 +1,11 @@
 /*
  * @Author: ranjun 
  * @Date: 2020-08-11 17:57:26 
- * @Last Modified by:   ranjun 
- * @Last Modified time: 2020-08-11 17:57:26 
+ * @Last Modified by: ranjun
+ * @Last Modified time: 2020-08-20 09:20:16
  */
 import fetch from 'dva/fetch';
+import { Toast, WhiteSpace, WingBlank, Button } from 'antd-mobile';
 
 function parseJSON(response) {
   return response.json();
@@ -13,13 +14,21 @@ function parseJSON(response) {
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
     return response;
-  } else {
+  } else if (response.status === 404) {
     // 拦截处理
+    _showErr('页面不存在')
+  } else if (response.status === 401 || response.status === 403) {
+    // 拦截处理
+    _showErr()
   }
 
   const error = new Error(response.statusText);
   error.response = response;
   throw error;
+}
+
+function _showErr(err) {
+  Toast.fail(err || '未登录', 2000)
 }
 
 /**

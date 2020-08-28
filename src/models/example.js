@@ -21,6 +21,7 @@ export default {
 
 	effects: {
 		*getRandomImg({}, {call, put}) {
+			console.log('start')
       const {data} = yield call(getRandomImg)
       yield console.log(data)
 			if(data?.message) {

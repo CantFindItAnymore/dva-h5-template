@@ -1,15 +1,22 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { connect } from 'dva';
 import styles from './IndexPage.less';
 
 import { Tag } from 'antd-mobile';
 
-function Example({example}) {
+const Example = (props) => {
+
+  useEffect(() => {
+    props.dispatch({
+      type: "getRandomImg"
+    });
+  })
+
   return (
     <div className={styles.container}>
-      <img src={example.randomImg} alt='logo' />
+      <img src={props.example.randomImg} alt='logo' />
       <p className={styles.title}>
-        dva-h5 via rj
+        coded with ❤ by rj
       </p>
       <div className={styles.tagContainer}>
         <Tag>dva</Tag>
@@ -26,4 +33,4 @@ Example.propTypes = {
 
 export default connect(({ example }) => ({
   example,
-}))(Example);
+}))(Example)
